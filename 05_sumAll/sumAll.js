@@ -4,6 +4,7 @@ const sumAll = function(firstNum, lastNum) {
 	let endNum = 0;
 
 	if (firstNum < 0 || lastNum < 0) return 'ERROR';
+	if (typeof firstNum != 'number' || typeof lastNum != 'number') return 'ERROR';
 
 	if (firstNum < lastNum) {
 		startNum = firstNum;
@@ -18,6 +19,8 @@ const sumAll = function(firstNum, lastNum) {
 	}
 	return sum;
 };
+
+console.log(sumAll('pimpek', 10));
 
 // Do not edit below this line
 module.exports = sumAll;
