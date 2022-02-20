@@ -10,8 +10,6 @@ const ctof = function(c) {
 	else return Math.round(fahrenheit*10)/10;
 };
 
-console.log(ftoc(100));
-
 // Do not edit below this line
 module.exports = {
   ftoc,
