@@ -22,13 +22,15 @@ First I tried with using .toFixed(1) but that returns the results as a string (n
 Now I had to add unary operator + to the result to convert it to a number. Using Number() also works as well as parseFloat()
 And I wrote another line of code above which checks if a result is 0 or if it's a integer. If any of those conditions is true then return the result as is without going to the .toFixed(1) part. And it works!
 
-But, with further reading I saw that the preferred way to do the rounding is by using Math.round(n * 10)/10; since it avoid the double conversion from number -> string (.toFixed()) -> number (using +, Number or parseFloat).
+But, with further reading I saw that the preferred way to do the rounding is by using Math.round(n * 10)/10; since it avoids the double conversion from number -> string (.toFixed()) -> number (using +, Number or parseFloat).
+
 And, albeit too late, I realised that the above method using Math.round removes the need for checking if the result is 0 or if it's an integer (lines 3 and 9 in the code)..
 
-So, finally, the solution of CtoF with rounding to 1 decimal point would simply be written: 
-const ftoc = function(f) {
-  let celsius = (f - 32) * (5/9);
-	return Math.round(celsius*10)/10;
-};
+So, finally, the solution of FtoC with rounding to 1 decimal point would simply be written: 
+
+	const ftoc = function(f) {
+		let celsius = (f - 32) * (5/9);
+		return Math.round(celsius*10)/10;
+	};
 
 Oh well, but I did learn a lot!
