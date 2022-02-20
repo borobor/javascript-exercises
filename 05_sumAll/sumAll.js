@@ -3,6 +3,8 @@ const sumAll = function(firstNum, lastNum) {
 	let startNum = 0;
 	let endNum = 0;
 
+	if (firstNum < 0 || lastNum < 0) return 'ERROR';
+
 	if (firstNum < lastNum) {
 		startNum = firstNum;
 		endNum = lastNum;
