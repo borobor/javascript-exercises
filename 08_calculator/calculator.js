@@ -16,15 +16,19 @@ const multiply = function(arr) {
 	return result;	
 };
 
-const power = function() {
-	
+
+//tried using something different instead of ** or Math.pow()
+const power = function(a, b) {
+	let num = a;
+	for (i = 1; i < b; i++) {
+		a *= num;
+	}
+	return a;
 };
 
 const factorial = function() {
 	
 };
-
-console.log(subtract(10, 4));
 
 // Do not edit below this line
 module.exports = {
