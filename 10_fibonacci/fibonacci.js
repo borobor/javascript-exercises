@@ -1,6 +1,7 @@
 const fibonacci = function(num) {
-	let sequence = [0, 1];
 	if (num < 0) return "OOPS";
+	if (num == 0) return 0;
+	let sequence = [0, 1];
 	for (let i = 1; i < num; i++) {
 		let last = sequence.slice(-1);
 		let secondLast = sequence.slice(-2, -1);
