@@ -1,6 +1,12 @@
 const palindromes = function (palindrome) {
-	let reversed = Array.from(palindrome).reverse().join('');
-	return palindrome === reversed;
+	let cleanArr = palindrome
+						.toLowerCase()
+						.split('')
+						.filter(char => char >= 'a' && char <= 'z');
+	let cleanString = cleanArr.join('');
+	let reversedString = cleanArr.reverse().join('');
+	
+	return cleanString == reversedString;
 };
 
 // Do not edit below this line
