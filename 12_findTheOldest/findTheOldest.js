@@ -1,9 +1,15 @@
 const findTheOldest = function(arr) {
-	const oldest = arr.sort(function(a, b) {
-		const lastPerson = a.yearOfDeath - a.yearOfBirth;
-		const nextPerson = b.yearOfDeath - b.yearOfBirth;
-		return (nextPerson - lastPerson);
-	});
+	let yearNow = new Date().getFullYear();
+	arr.forEach(person => {
+		if (!person.yearOfDeath) person.yearOfDeath = yearNow;
+		let yearsLived = person.yearOfDeath - person.yearOfBirth;
+		person['yearsLived'] = yearsLived;
+		});
+	arr.sort((a, b) => {
+		let thisPerson = a.yearOfDeath - a.yearOfBirth;
+		let thatPerson = b.yearOfDeath - b.yearOfBirth;
+		return thatPerson - thisPerson;
+		});
 	return arr[0];
 };
 
